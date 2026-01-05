@@ -3,12 +3,12 @@ name: ci
 on:
   pull_request:
     branches: [main]
-
+#pulls main branch
 jobs:
   tests:
     name: Tests
     runs-on: ubuntu-latest
-
+#tests on vm
     steps:
       - name: Check out code
         uses: actions/checkout@v4
@@ -19,4 +19,4 @@ jobs:
           go-version: "1.25.1"
 
       - name: Force Failure
-        run: (exit 1)
+        run: go version
